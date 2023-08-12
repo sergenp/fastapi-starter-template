@@ -31,7 +31,7 @@ def anyio_backend():
 
 
 engine = create_async_engine(
-    settings.TEST_DATABASE_URI.unicode_string(), echo=False, poolclass=NullPool
+    settings.TEST_DATABASE_URI.unicode_string(), echo=False, poolclass=NullPool  # type: ignore # noqa
 )
 
 async_session_maker: AsyncSession = sessionmaker(
@@ -103,7 +103,7 @@ def create_db_tables(create_test_db) -> None:
 
     config = Config(file_=config_file)
     config.set_main_option("script_location", migrations_dir)
-    config.set_main_option("sqlalchemy.url", settings.TEST_DATABASE_URI.unicode_string())
+    config.set_main_option("sqlalchemy.url", settings.TEST_DATABASE_URI.unicode_string())  # type: ignore # noqa
     # upgrade the database to the latest revision
     command.upgrade(config, "head")
 

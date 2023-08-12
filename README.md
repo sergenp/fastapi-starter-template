@@ -6,7 +6,15 @@ This project is licensed under the terms of the MIT license.
 
 ## What does this project include
 
-This project is intended for a base for your fastapi projects. It includes JWT Token authentication, pytest configurations, email verification, events, and an overall organized project structure. With this project you can start worrying about what to actually implement, rather than the infrastructure, authentication, configurations etc. you need to build in order to create your API.
+- A fully async project with async SQLAlchemy 2.0 and Alembic for db migrations
+- pytest, pre-made configuration and fixtures, with e2e tests
+- A Dockerfile ready for deploying to production environments
+- No frontend, just a pure backend written in DDD pattern
+- JWT Authentication using pyjwt
+- Event Driven Design, with events being base pydantic models
+- Pre-commit hooks, with ruff and mypy
+
+This project is intended for a base for your fastapi projects. With this project you can start worrying about what to actually implement, rather than the infrastructure, authentication, configurations etc. you need to build in order to create your API.
 
 ### How to run the app
 
